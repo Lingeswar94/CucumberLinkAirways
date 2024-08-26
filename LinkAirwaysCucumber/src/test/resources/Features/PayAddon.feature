@@ -22,7 +22,7 @@ Feature: Title is Addon
 
   Scenario Outline: Title of Addon scenario outline
     Given I want to Add Addon 
-    When I want to click continu button
+    When I want to click continue button
     
 
 

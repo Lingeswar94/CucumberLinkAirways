@@ -15,7 +15,7 @@ public class Addon {
 	 System.out.println("Addon Not Selected");
 	}
 
-	@When("I want to click continu button")
+	@When("I want to click continue button")
 	public void i_want_to_click_continu_button() {
 		AddonPage Page = PageFactory.initElements(BrowserChoose.getDriver(), AddonPage.class);
 		Page.AddonContinuebutton();

@@ -67,9 +67,9 @@ public class PaymentPage {
 		CVV.sendKeys(CCVno);
 	}
 
-	public void expirydate() {
+	public void expirydate(String Year) {
 		Select select = new Select(PaymentPage.Expirydate);
-		select.selectByValue("2026");
+		select.selectByValue(Year);
 	}
 
 	public void Billingdataclear() {
@@ -88,9 +88,9 @@ public class PaymentPage {
 		Contact.sendKeys(contactno);
 	}
 
-	public void selectCountry() {
+	public void selectCountry(String Country) {
 		Select select = new Select(PaymentPage.country);
-		select.selectByVisibleText("India");
+		select.selectByVisibleText(Country);
 	}
 
 	public void checkbox() {

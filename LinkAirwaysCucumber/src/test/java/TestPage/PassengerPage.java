@@ -91,14 +91,15 @@ public class PassengerPage {
 	@FindBy(xpath = "//input[@id='btnConfirmPassenger']")
 	public WebElement passcontinue;
 
-	public void MainPassenger( String fname, String lname, String mobile, String mailid, String conemail,
+	public void MainPassenger(String Adtitle, String fname, String lname, String mobile, String mailid, String conemail,
 			String Res) {
-		//WebDriverWait wait=new WebDriverWait(BrowserChoose.getDriver(), Duration.ofSeconds(30));
-		//wait.until(ExpectedConditions.visibilityOf((WebElement) By.xpath("//select[@id='ucPassenger1_lstPassenger_TITLE_0_ddlTitle_0']")));
-		//Select select = new Select(PassengerPage.Title);
-		//select.selectByValue(Adtitle);
-		//Actions actions=new Actions(BrowserChoose.getDriver());
-		//actions.click(PassengerPage.Title);
+		// WebDriverWait wait=new WebDriverWait(BrowserChoose.getDriver(), Duration.ofSeconds(30));
+		// wait.until(ExpectedConditions.visibilityOf((WebElement)
+		// By.xpath("//select[@id='ucPassenger1_lstPassenger_TITLE_0_ddlTitle_0']")));
+		Select select = new Select(PassengerPage.Title);
+		select.selectByValue(Adtitle);
+		// Actions actions=new Actions(BrowserChoose.getDriver());
+		// actions.click(PassengerPage.Title);
 		firstname.sendKeys(fname);
 		lastname.sendKeys(lname);
 		mobileno.sendKeys(mobile);
