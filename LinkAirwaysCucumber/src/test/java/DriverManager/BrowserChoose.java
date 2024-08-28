@@ -5,9 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-
-
 import Ultity.CommonFunction;
+import Ultity.Helper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserChoose {
@@ -18,34 +17,35 @@ public class BrowserChoose {
 		return driver;
 	}
 
-	CommonFunction commonFunction=new CommonFunction();
-	
-	
+	CommonFunction commonFunction = new CommonFunction();
+
 	public static void lanuchbrowser() {
-		CommonFunction commonFunction=new CommonFunction();
-		
-		switch (commonFunction.Browser) {
-		case "Chrome":
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			break;
-		case "Firefox":
-			WebDriverManager.firefoxdriver().setup();
+		CommonFunction commonFunction = new CommonFunction();
+		try {
+			switch (commonFunction.Browser) {
+			case "Chrome":
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+				break;
+			case "Firefox":
+				WebDriverManager.firefoxdriver().setup();
 
-			driver = new FirefoxDriver();
-			break;
-		case "IE":
-			WebDriverManager.iedriver().setup();
+				driver = new FirefoxDriver();
+				break;
+			case "IE":
+				WebDriverManager.iedriver().setup();
 
-			driver = new InternetExplorerDriver();
-			break;
-		default:
-			WebDriverManager.chromedriver().setup();
+				driver = new InternetExplorerDriver();
+				break;
+			default:
+				WebDriverManager.chromedriver().setup();
 
-			driver = new ChromeDriver();
-			break;
+				driver = new ChromeDriver();
+				break;
+			}
+		} catch (Exception e) {
+			Helper.getscreenshot();
 		}
-
 		driver.manage().window().maximize();
 		driver.navigate().to(commonFunction.Url);
 
